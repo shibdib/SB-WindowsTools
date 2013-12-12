@@ -3,7 +3,7 @@
 # of connected clients. This will work until some update changes log format
 
 # Set this to be the full path to your log file
-STARBOUND_LOGFILE = "/home/starbound/linux64/starbound_server.log"
+STARBOUND_LOGFILE = "C:\Program Files (x86)\Steam\SteamApps\common\Starbound\starbound_server.log"
 
 # Log keywords
 # connected disconnected = duh
@@ -35,12 +35,15 @@ def main():
         # Player's connection has been reaped, keyword connection
         if status == 'connection':
             del clients[player]
-
-    print "Total Connected Players: %s" % len(clients.keys())
+		
+		#creates a file called players.txt	
+	f = open('players.txt', 'w')
+	    #header for players.txt
+	f.write("**TITLE** \n")
+    f.write("Total Connected Players: %s \n \n" % len(clients.keys()))
     for player, status in clients.iteritems():
-        print "[client %s = %s]" % (player, status)
-
+        f.write("- %s \n" % (player))
+	f.write("\n \n Updated every x minutes.")
 
 if __name__ == '__main__':
     main()
-
