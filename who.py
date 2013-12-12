@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# !!!!!!This script was originally written by: sethdmoore!!!!!!!
 # This hacky script iterates over your starbound log file and prints a list of
 # of connected clients. This will work until some update changes log format
 
